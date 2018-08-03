@@ -1,5 +1,47 @@
 public class JavaMethods {
 
+    // Числа фибоначчи. Динамическое программирование
+    public int fiboDynamicTD(int[] arr, int n) {
+        if (arr[n] == -1) {
+            if (n <= 1) {
+                arr[n] = n;
+            } else {
+                arr[n] = fiboDynamicTD(arr, n-1) + fiboDynamicTD(arr, n-2);
+            }
+
+        }
+        return arr[n];
+    }
+    // Числа фибоначчи рекурсивно (плохой метод)
+    public int fiboBad(int n) {
+        if (n <= 1) return n;
+        return fiboBad(n-1) + fiboBad(n-2);
+    }
+
+    //числа фибоначчи через массив
+    public int fibo(int n) {
+        int[] arr = new int[n+1];
+        arr[0] = 0;
+        arr[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            arr[i] = arr[i-1] + arr[i-2];
+        }
+        return arr[n];
+    }
+    // числа фибоначчи. Элегантное решение (без массива и рекурсии)
+    public int fiboFibo(int n) {
+        int a = 0;
+        int b = 1;
+        int c = 0;
+        for (int i = 2; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return c;
+    }
+
+
     //Наибольший общий делитель (Евклид)
     public int nod(int a, int b) {
         int[] arr = new int[2];
@@ -35,3 +77,4 @@ public class JavaMethods {
         return -1;
     }
 }
+
