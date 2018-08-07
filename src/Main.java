@@ -1,16 +1,13 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.Arrays;
+
 
 public class Main {
-    public static void main(String[] args) {
-        int n = 45;
-        int[] arr = new int[n + 1];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = -1;
-        }
-        long startTime = System.currentTimeMillis();
-        System.out.println(new JavaMethods().fiboFibo(45));
-        long finishTime = System.currentTimeMillis();
-        System.out.println(finishTime - startTime + " ms");
+
+
+    public static void main(String[] args) throws IOException {
+        int[] arr = new int[]{2, 4, 6, 0, 3, 2, 1, 10};
+        System.out.println(Arrays.toString(new Sorts().bubbleSort(arr)));
 
 
 

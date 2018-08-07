@@ -1,4 +1,12 @@
+import java.util.Objects;
+
 public class JavaMethods {
+
+    int s;
+
+    public JavaMethods(int name) {
+        this.s = name;
+    }
 
     // Числа фибоначчи. Динамическое программирование
     public int fiboDynamicTD(int[] arr, int n) {
@@ -76,5 +84,7 @@ public class JavaMethods {
         }
         return -1;
     }
+
+
 }
 
